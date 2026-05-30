@@ -1,0 +1,36 @@
+[package]
+name = "poseidon2-pvm"
+description = "Hand-written, PolkaVM-tuned ZK-friendly hash suite (Poseidon2 + Rescue-Prime) over the BN254 scalar field."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "../../README.md"
+categories = ["cryptography", "no-std"]
+keywords = ["poseidon2", "zk", "polkavm", "bn254", "merkle"]
+
+[features]
+default = []
+# Enables std-only conveniences (e.g. Display impls, host helpers). The on-chain build
+# never enables this. `alloc` is always required by the core (the Merkle tree); a
+# pallet-revive contract supplies an allocator.
+std = []
+
+[dependencies]
+# Intentionally dependency-free: the entire value proposition is hand-tuned arithmetic
+# that maps onto RISC-V 64-bit instructions, rather than a generic, un-tuned big-integer
+# dependency compiled to PolkaVM.
+
+[dev-dependencies]
+# Reference oracle for differential tests ONLY. Never compiled into the PVM artifact.
+ark-bn254 = "0.4"
+ark-ff = "0.4"
+hex = "0.4"
+proptest = "1"
+criterion = "0.5"
+
+[[bench]]
+name = "hashing"
+harness = false

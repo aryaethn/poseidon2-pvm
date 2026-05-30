@@ -1,0 +1,18 @@
+[package]
+name = "poseidon2-pvm-contract"
+description = "PolkaVM / pallet-revive wrapper exposing poseidon2-pvm primitives on-chain (Milestone 3)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+poseidon2-pvm = { path = "../poseidon2-pvm" }
+
+# TODO(M3): the deployable artifact is built for the PolkaVM target with the pallet-revive
+# contract tooling (resolc / polkavm-linker), a `[lib] crate-type` suited to that target,
+# and a size-tuned, `panic = "abort"` profile. During scaffolding this is a plain library
+# so it type-checks on the host alongside the rest of the workspace.

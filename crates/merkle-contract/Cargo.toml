@@ -1,0 +1,23 @@
+[package]
+name = "merkle-contract"
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "pallet-revive PVM contract: an on-chain Poseidon2 incremental Merkle tree."
+
+# Own workspace: different target + toolchain than the host crates.
+[workspace]
+
+[dependencies]
+poseidon2-pvm = { path = "../poseidon2-pvm" } # no_std, no default features
+
+# Pin these to the versions used by paritytech/rust-contract-template for the polkadot-sdk
+# revision you target. Names/versions below are placeholders to confirm against the template.
+# pallet-revive-uapi = "*"
+# polkavm-derive     = "*"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

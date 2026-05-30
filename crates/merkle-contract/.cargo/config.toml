@@ -1,0 +1,12 @@
+# PolkaVM build configuration.
+#
+# Copy the real `[build] target = "..."` triple and the linker/runner settings from
+#   https://github.com/paritytech/rust-contract-template/blob/main/.cargo/config.toml
+# for the polkadot-sdk revision you target. The PolkaVM RISC-V target and `polkavm-linker`
+# settings live here so that `cargo build` selects them automatically (and rust-analyzer works).
+#
+# [build]
+# target = "<polkavm riscv target from the template>"
+#
+# [target.<that-target>]
+# linker = "polkavm-linker"   # or the rustflags the template specifies

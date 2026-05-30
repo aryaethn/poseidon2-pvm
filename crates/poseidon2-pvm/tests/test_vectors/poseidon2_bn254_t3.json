@@ -1,0 +1,15 @@
+{
+  "_comment": "Known-Answer Tests for Poseidon2 over BN254 Fr, width t=3. Fill from an independent reference (Poseidon2 ref / HorizenLabs zkhash) in Milestone 1. Values are 0x-prefixed canonical Fr in hex.",
+  "field": "bn254_fr",
+  "width": 3,
+  "sbox_degree": 5,
+  "full_rounds": 8,
+  "partial_rounds": 56,
+  "cases": [
+    {
+      "inputs": ["0x0000000000000000000000000000000000000000000000000000000000000000",
+                 "0x0000000000000000000000000000000000000000000000000000000000000001"],
+      "output": "TODO_FILL_FROM_REFERENCE"
+    }
+  ]
+}

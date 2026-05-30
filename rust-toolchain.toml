@@ -1,0 +1,5 @@
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]
+# The PolkaVM contract target (Milestone 3) is layered on top of this stable toolchain,
+# following the Polkadot SDK / pallet-revive build instructions.

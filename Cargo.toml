@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/poseidon2-pvm",
+    "crates/poseidon2-pvm-contract",
+    "tools/gen-params",
+]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["<YOUR NAME OR HANDLE>"]
+repository = "https://github.com/<your-handle>/poseidon2-pvm"
+rust-version = "1.81"
+
+# Note: the PolkaVM contract artifact (Milestone 3) is built for the PolkaVM target with
+# its own size-tuned, `panic = "abort"` configuration via the pallet-revive tooling.
+# That lives with the contract setup, not here, so host benchmarks under `--release`
+# behave normally.

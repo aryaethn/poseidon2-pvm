@@ -1,0 +1,12 @@
+/target
+**/target
+**/*.rs.bk
+Cargo.lock
+.DS_Store
+
+# circuit / proving-system artifacts (Milestone 3)
+/circuits/build
+*.ptau
+*.zkey
+*.r1cs
+*.wtns

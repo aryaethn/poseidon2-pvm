@@ -1,0 +1,15 @@
+[package]
+name = "gen-params"
+description = "Deterministic Poseidon2 / Rescue-Prime parameter generation for poseidon2-pvm (Milestone 1 reproducibility tool)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+# Kept dependency-light on purpose. Milestone 1 may add a single big-integer helper for the
+# field math used during constant generation; that dependency stays in this host-only tool
+# and is never pulled into the on-chain crate.
