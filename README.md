@@ -65,9 +65,6 @@ reproducible** so nothing is an unaudited magic constant.
 ## Build & test
 
 ```bash
-# format once before your first commit so the CI fmt check passes
-cargo fmt --all
-
 cargo build --workspace
 cargo test  --workspace          # scaffolding tests are #[ignore]d until implemented
 cargo bench -p poseidon2-pvm     # native micro-benchmarks (after M1/M2)
